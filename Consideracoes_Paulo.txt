@@ -1,4 +1,4 @@
-ARQUIVOS: ==================================================================================
+ARQUIVOS: ===================================================================================
 D_clientes:
   tabela está OK
 D_produtos:
@@ -12,3 +12,4 @@ F_avaliacoes:
   tabela está OK
 F_atendimentos:
   verificar valores da coluna "tempo_resposta" (no CSV tem que trocar o ponto por vírgula)
+
