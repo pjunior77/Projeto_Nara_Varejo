@@ -1,0 +1,16 @@
+ARQUIVOS: ===================================================================================
+D_clientes:
+  tabela está OK
+D_produtos:
+  verificar tipo da coluna "preço" (no CSV tem que trocar o ponto por vírgula)
+  coluna "marca" está com linhas vazias
+F_campanhas:
+  verificar tipo da coluna "custo" (no CSV tem que trocar o ponto por vírgula)
+F_vendas:
+  verificar tipo da coluna "valor total" (no CSV tem que trocar o ponto por vírgula)
+  criar uma coluna para incluir o "id_campanha" (comparar o campo "data" com a "data_inicio" e "data fim" da campanha)
+F_avaliacoes:
+  tabela está OK
+F_atendimentos:
+  verificar valores da coluna "tempo_resposta" (no CSV tem que trocar o ponto por vírgula)
+
