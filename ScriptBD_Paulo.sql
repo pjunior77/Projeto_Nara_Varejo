@@ -4,6 +4,10 @@ CREATE DATABASE PROJ_NARA_VAREJO;
 #Seta o Database para uso
 USE PROJ_NARA_VAREJO;
 
+##############################################################
+# Criação das tabelas
+##############################################################
+
 #Cria a tabela D_clientes ##########################################################
 CREATE TABLE D_clientes (
 ID_Cliente INT,
@@ -77,4 +81,94 @@ FOREIGN KEY (ID_Produto) REFERENCES D_produtos(ID_Produto),
 FOREIGN KEY (ID_Campanha) REFERENCES D_campanhas(ID_Campanha)
 );
 
+##############################################################
+# Carrega os arquivos CSV nas tabelas
+##############################################################
+SET GLOBAL local_infile = 1;				#Permissão para acessar arquivos locais no servidor de Banco de Dados
+SHOW VARIABLES LIKE 'secure_file_priv';		#Para verificar o local da pasta onde se pode carregar os arquivos
 
+
+#Carrega os dados da tabela D_clientes ##########################################################
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_clientes.csv'
+INTO TABLE D_clientes
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS						#Ignora a primeira linha por causa do cabeçalho
+(ID_Cliente,
+Nome,
+Idade,
+Sexo,
+Cidade,
+Estado,
+Canal_Aquisicao
+);
+
+#Carrega os dados da tabela D_produtos ##########################################################
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_produtos.csv'
+INTO TABLE D_produtos
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS						#Ignora a primeira linha por causa do cabeçalho
+(ID_Produto,
+Nome_Produto,
+Categoria,
+Preco,
+Marca
+);
+
+#Carrega os dados da tabela D_campanhas ##########################################################
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_campanhas.csv'
+INTO TABLE D_campanhas
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS						#Ignora a primeira linha por causa do cabeçalho
+(ID_Campanha,
+Canal,
+Data_Inicio,
+Data_Fim,
+Tipo_Campanha,
+Custo
+);
+
+#Carrega os dados da tabela F_atendimentos ##########################################################
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_atendimentos.csv'
+INTO TABLE F_atendimentos
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS						#Ignora a primeira linha por causa do cabeçalho
+(ID_Atendimento,
+ID_Cliente,
+Tipo,
+Data,
+Tempo_Resposta,
+Nota_Satisfacao
+);
+
+#Carrega os dados da tabela F_avaliacoes ##########################################################
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_avaliacoes.csv'
+INTO TABLE F_avaliacoes
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS						#Ignora a primeira linha por causa do cabeçalho
+(ID_Cliente,
+ID_Produto,
+Nota,
+Data_Avaliacao,
+Comentario
+);
+
+#Carrega os dados da tabela F_vendas ##########################################################
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_vendas.csv'
+INTO TABLE F_vendas
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS						#Ignora a primeira linha por causa do cabeçalho
+(ID_Venda,
+ID_Cliente,
+ID_Produto,
+Data,
+Quantidade,
+Canal,
+Valor_Total,
+ID_Campanha
+);

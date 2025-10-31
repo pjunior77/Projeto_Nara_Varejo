@@ -14,3 +14,6 @@ F_avaliacoes:
 F_atendimentos:
   verificar valores da coluna "tempo_resposta" (no CSV tem que trocar o ponto por vírgula)
 
+Vendas 1, vendas 2 e Vendas 3:
+  A coluna de data está com a data e hora (tem que retirar a hora)
+  A coluna valor_total está sem o separador de casas decimais
