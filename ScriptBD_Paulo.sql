@@ -60,7 +60,7 @@ ID_Produto INT,
 Nota INT,
 Data_Avaliacao DATE,
 Comentario VARCHAR(50),
-PRIMARY KEY (ID_Cliente, ID_Produto),
+PRIMARY KEY (ID_Cliente, ID_Produto, Data_avaliacao),
 FOREIGN KEY (ID_Cliente) REFERENCES D_clientes(ID_Cliente),
 FOREIGN KEY (ID_Produto) REFERENCES D_produtos(ID_Produto)
 );
@@ -89,7 +89,8 @@ SHOW VARIABLES LIKE 'secure_file_priv';		#Para verificar o local da pasta onde s
 
 
 #Carrega os dados da tabela D_clientes ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_clientes.csv'
+#LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_clientes.csv'
+LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/D_clientes.csv'
 INTO TABLE D_clientes
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -104,7 +105,8 @@ Canal_Aquisicao
 );
 
 #Carrega os dados da tabela D_produtos ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_produtos.csv'
+#LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_produtos.csv'
+LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/D_produtos.csv'
 INTO TABLE D_produtos
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -117,7 +119,8 @@ Marca
 );
 
 #Carrega os dados da tabela D_campanhas ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_campanhas.csv'
+#LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/D_campanhas.csv'
+LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/D_campanhas.csv'
 INTO TABLE D_campanhas
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -131,7 +134,8 @@ Custo
 );
 
 #Carrega os dados da tabela F_atendimentos ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_atendimentos.csv'
+#LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_atendimentos.csv'
+LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/F_atendimentos.csv'
 INTO TABLE F_atendimentos
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -145,7 +149,8 @@ Nota_Satisfacao
 );
 
 #Carrega os dados da tabela F_avaliacoes ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_avaliacoes.csv'
+#LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_avaliacoes.csv'
+LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/F_avaliacoes.csv'
 INTO TABLE F_avaliacoes
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -158,7 +163,8 @@ Comentario
 );
 
 #Carrega os dados da tabela F_vendas ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_vendas.csv'
+#LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/ProjetoNara_Varejo/F_vendas.csv'
+LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/dfVendas.csv'
 INTO TABLE F_vendas
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
