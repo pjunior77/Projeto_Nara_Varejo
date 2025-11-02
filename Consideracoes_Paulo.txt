@@ -17,3 +17,6 @@ F_atendimentos:
 Vendas 1, vendas 2 e Vendas 3:
   A coluna de data está com a data e hora (tem que retirar a hora)
   A coluna valor_total está sem o separador de casas decimais
+  Existe o produto 100 que não existe, está dando problema de foreign key com a tabela de produto
+  Existem valores da ID_Venda na vendas1.csv que estão repetidos com os dados da vendas.csv
+
