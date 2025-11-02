@@ -17,6 +17,7 @@ Sexo VARCHAR(1),
 Cidade VARCHAR(100),
 Estado VARCHAR(2),
 Canal_Aquisicao VARCHAR(50),
+Perfil VARCHAR(50),
 PRIMARY KEY (ID_Cliente)
 );
 
@@ -91,14 +92,15 @@ SET GLOBAL local_infile = 1;				#Permissão para acessar arquivos locais no serv
 
 ######################################################################################################
 # OBS: Antes de incluir os dados nas tabelas tem que executar os arquivos abaixo no Python:
+#	ProcessaArqClientesParaBD_Paulo.ipynb
 #	ProcessaArqAtendimentosParaBD_Paulo.ipynb
 #	ProcessaArqVendasParaBD_Paulo.ipynb
 #	ProcessaArqVendasExtrasParaBD_Paulo.ipynb
 ######################################################################################################
 
 #Carrega os dados da tabela D_clientes ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/Projeto_Nara_Varejo/clientes.csv'
-#LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/clientes.csv'
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/Projeto_Nara_Varejo/dfClientes.csv'
+#LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/dfClientes.csv'
 INTO TABLE D_clientes
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -109,7 +111,8 @@ Idade,
 Sexo,
 Cidade,
 Estado,
-Canal_Aquisicao
+Canal_Aquisicao,
+Perfil
 );
 #SELECT * FROM D_clientes;
 
