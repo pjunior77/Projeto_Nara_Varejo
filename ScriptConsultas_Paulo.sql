@@ -45,3 +45,10 @@ ON a.ID_CLiente = c.ID_Cliente
 GROUP BY a.tipo, c.Nome
 ORDER BY a.tipo ASC, ATENDIMENTOS DESC;
 
+#Criar indicadores temporais para acompanhar a evolução dos resultados
+SELECT YEAR(v.Data) AS ANO, MONTH(v.data) AS MES, v.canal, SUM(v.Valor_Total) AS VALOR_TOTAL
+FROM vendas v
+GROUP BY YEAR(v.Data), MONTH(v.data), v.canal
+ORDER BY YEAR(v.Data) ASC, MONTH(v.data) ASC, v.canal ASC;
+
+
