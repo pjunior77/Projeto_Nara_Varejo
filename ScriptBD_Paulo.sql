@@ -79,8 +79,7 @@ Valor_Total DECIMAL(10,2),
 ID_Campanha INT,
 PRIMARY KEY (ID_Venda),
 FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID_Cliente),
-FOREIGN KEY (ID_Produto) REFERENCES Produtos(ID_Produto),
-FOREIGN KEY (ID_Campanha) REFERENCES Campanhas(ID_Campanha)
+FOREIGN KEY (ID_Produto) REFERENCES Produtos(ID_Produto)
 );
 
 
@@ -93,6 +92,7 @@ SET GLOBAL local_infile = 1;				#Permissão para acessar arquivos locais no serv
 ######################################################################################################
 # OBS: Antes de incluir os dados nas tabelas tem que executar os arquivos abaixo no Python:
 #	ProcessaArqClientesParaBD_Paulo.ipynb
+#	ProcessaArqProdutosParaBD_Paulo.ipynb
 #	ProcessaArqAtendimentosParaBD_Paulo.ipynb
 #	ProcessaArqVendasParaBD_Paulo.ipynb
 #	ProcessaArqVendasExtrasParaBD_Paulo.ipynb
@@ -117,8 +117,8 @@ Perfil
 #SELECT * FROM Clientes;
 
 #Carrega os dados da tabela Produtos ##########################################################
-LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/Projeto_Nara_Varejo/produtos.csv'
-#LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/produtos.csv'
+LOAD DATA INFILE 'C:/PauloFrederico/PosGraduacao/SENAC_BigData/Projeto_Nara_Varejo/dfProdutos.csv'
+#LOAD DATA INFILE 'C:/Users/paulo.frederico/Documents/Projeto_Nara_Varejo/dfProdutos.csv'
 INTO TABLE Produtos
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
